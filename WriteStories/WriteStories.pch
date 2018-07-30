@@ -1,0 +1,32 @@
+//
+//  WriteStories.pch
+//  WriteStories
+//
+//  Created by YouXianMing on 2018/6/24.
+//  Copyright © 2018年 Techcode. All rights reserved.
+//
+
+#ifndef WriteStories_pch
+#define WriteStories_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/*----------------------------------------------
+ * $(SRCROOT)/$(PROJECT_NAME)/WriteStories.pch *
+ ----------------------------------------------*/
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+
+#define FmtStr(fmt, ...) [NSString stringWithFormat:fmt, ##__VA_ARGS__]
+
+#import <UIKit/UIKit.h>
+
+#import "SimpleNSLog.h"
+#import "UIView+DebugFrame.h"
+
+#endif
+
+#endif /* WriteStories_pch */

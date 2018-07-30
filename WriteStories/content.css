@@ -1,0 +1,369 @@
+@charset "UTF-8";
+
+/******************************************************************************************
+ 样式重置
+ ******************************************************************************************/
+
+
+/** 清除内外边距 **/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td,
+img {
+    border: medium none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/** 设置默认字体 **/
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5, tahoma, Srial, helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+em {
+    font-style: normal;
+}
+
+
+/** 重置列表元素 **/
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+/** 重置超链接元素 **/
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #F40;
+}
+
+
+/** 重置图片元素 **/
+
+img {
+    border: 0px;
+}
+
+
+/** 重置表格元素 **/
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/******************************************************************************************
+ 字体设置
+ ******************************************************************************************/
+
+
+/*<<<<<字体模板>>>>>*/
+
+
+/******************************************************************************************
+ 全局设置
+ ******************************************************************************************/
+
+body.outline * {
+    outline: dashed RGBA(255, 14, 25, 0.25) thin !important;
+}
+
+div.showDebug {
+    outline: solid RGBA(0, 192, 249, 0.5) thin !important;
+}
+
+div.showDebug * {
+    outline: solid RGBA(0, 192, 249, 0.5) thin !important;
+}
+
+body {
+    /** 字体大小 **/
+    font-size: 16px;
+    /** 字体粗细(400 等同于 normal，而 700 等同于 bold) **/
+    font-weight: 400;
+    /** 字体类型 **/
+    font-family: -apple-system;
+    /** onclick高亮颜色(设置为透明) **/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /** 文本选择(禁止) **/
+    -webkit-user-select: none;
+    /** 拖动(禁止) **/
+    -webkit-user-drag: none;
+}
+
+
+/******************************************************************************************
+ css样式
+ ******************************************************************************************/
+
+
+/********************
+ word-break
+ ********************/
+
+.wbl {
+    word-break: break-all;
+}
+
+
+/********************
+ text-align
+ ********************/
+
+.tal {
+    text-align: left;
+}
+
+.tar {
+    text-align: right;
+}
+
+.tac {
+    text-align: center;
+}
+
+
+/********************
+ display
+ ********************/
+
+.db {
+    display: block;
+}
+
+
+/********************
+ margin
+ ********************/
+
+.ma {
+    margin: auto;
+}
+
+
+/********************
+ position
+ ********************/
+
+.ps {
+    position: static;
+}
+
+.pr {
+    position: relative;
+}
+
+.pa {
+    position: absolute;
+}
+
+.px {
+    position: fixed;
+}
+
+
+/********************
+ text-decoration
+ ********************/
+
+.tdn {
+    text-decoration: none;
+}
+
+.tdu {
+    text-decoration: underline;
+}
+
+.tdl {
+    text-decoration: line-through;
+}
+
+
+/********************
+ border-style
+ ********************/
+
+.bss {
+    border-style: solid;
+}
+
+.bsdt {
+    border-style: dotted;
+}
+
+.bsdb {
+    border-style: double;
+}
+
+.bsds {
+    border-style: dashed;
+}
+
+
+/********************
+ background
+ ********************/
+
+.brn {
+    background-repeat: no-repeat;
+}
+
+.brx {
+    background-repeat: repeat-x;
+}
+
+.bry {
+    background-repeat: repeat-y;
+}
+
+.brr {
+    background-repeat: round;
+}
+
+.bs_100_a {
+    background-size: 100% auto;
+}
+
+.bgpt {
+    background-position: top;
+}
+
+.bgpr {
+    background-position: right;
+}
+
+.bgpb {
+    background-position: bottom;
+}
+
+.bgpl {
+    background-position: left;
+}
+
+.bgpc {
+    background-position: center;
+}
+
+
+/********************
+ width & height
+ ********************/
+
+.h_100 {
+    height: 100%;
+}
+
+.w_100 {
+    width: 100%;
+}
+
+
+/********************
+ box-sizing
+ ********************/
+
+.bsbb {
+    box-sizing: border-box;
+}
+
+.bscb {
+    box-sizing: content-box;
+}
+
+
+/********************
+ overflow
+ ********************/
+
+.ofh {
+    overflow: hidden;
+}
+
+
+/********************
+ pointer-events
+ ********************/
+
+.pen {
+    pointer-events: none;
+}
+
+
+/********************
+ z-index
+ ********************/
+
+.z_0 {
+    z-index: 0;
+}
+
+.z_1 {
+    z-index: 1;
+}
+
+.z_2 {
+    z-index: 2;
+}
+
+.z_3 {
+    z-index: 3;
+}
+
+.z_n1 {
+    z-index: -1;
+}
+
+.z_n2 {
+    z-index: -2;
+}
+
+.z_n3 {
+    z-index: -3;
+}
