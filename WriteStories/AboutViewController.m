@@ -8,7 +8,6 @@
 
 #import "AboutViewController.h"
 #import "UIView+SetRect.h"
-#import "App.h"
 #import "UIView+GlowView.h"
 #import "HexColors.h"
 #import "GCD.h"
@@ -29,7 +28,7 @@
     [super viewDidLoad];
 
     self.imageView        = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"coffce"]];
-    self.imageView.center = CGPointMake(App.HalfWidth, self.contentView.middleY - 50.f);
+    self.imageView.center = CGPointMake(Width / 2.f, self.contentView.middleY - 50.f);
     [self.contentView addSubview:self.imageView];
     
     self.redImageView        = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"coffce-red"]];
@@ -55,7 +54,7 @@
     } afterDelaySecs:2.f];
     
     self.author         = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"author"]];
-    self.author.centerX = App.HalfWidth;
+    self.author.centerX = Width / 2.f;
     self.author.top     = self.redImageView.bottom + 20.f;
     [self.contentView addSubview:self.author];
 }

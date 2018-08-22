@@ -13,7 +13,6 @@
 #import "HexColors.h"
 #import "File.h"
 #import "File+Property.h"
-#import "App.h"
 #import "EdgeInsetsLabel.h"
 
 @interface FileCell ()
@@ -31,7 +30,7 @@
 
 - (void)buildSubview {
     
-    self.backgroundContentView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 60.f)];
+    self.backgroundContentView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width, 60.f)];
     self.backgroundContentView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.backgroundContentView];
     
@@ -43,11 +42,11 @@
     self.circleIconImageView.center = self.selectedIconImageView.center;
     [self.backgroundContentView addSubview:self.circleIconImageView];
     
-    self.contentTitleLabel      = [[UILabel alloc] initWithFrame:CGRectMake(52.f, 5, App.Width - 15.f - 52.f, 36.f)];
+    self.contentTitleLabel      = [[UILabel alloc] initWithFrame:CGRectMake(52.f, 5, Width - 15.f - 52.f, 36.f)];
     self.contentTitleLabel.font = [UIFont PingFangSC_Medium_WithFontSize:20.f];
     [self.backgroundContentView addSubview:self.contentTitleLabel];
     
-    self.contentTimeLabel           = [[UILabel alloc] initWithFrame:CGRectMake(52.f, 60.f - 28.f, App.Width - 15.f, 28.f)];
+    self.contentTimeLabel           = [[UILabel alloc] initWithFrame:CGRectMake(52.f, 60.f - 28.f, Width - 15.f, 28.f)];
     self.contentTimeLabel.font      = [UIFont PingFangSC_Regular_WithFontSize:12.f];
     self.contentTimeLabel.textColor = [UIColor colorWithHexString:@"#5a5a5a"];
     [self.backgroundContentView addSubview:self.contentTimeLabel];
@@ -60,7 +59,7 @@
     self.infoLabel.layer.masksToBounds = YES;
     [self.backgroundContentView addSubview:self.infoLabel];
     
-    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 59.5f, App.Width, 0.5f)];
+    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 59.5f, Width, 0.5f)];
     line.backgroundColor = UIColor.LineColor;
     [self.backgroundContentView addSubview:line];
 }
@@ -86,7 +85,7 @@
             self.backgroundContentView.backgroundColor = [[UIColor colorWithHexString:@"#1ca6cd"] colorWithAlphaComponent:0.1f];
             [self.infoLabel sizeToFitWithText:@"导入完成"];
             self.infoLabel.backgroundColor = [UIColor colorWithHexString:@"#1ca6cd"];
-            self.infoLabel.right           = App.Width - 4;
+            self.infoLabel.right           = Width - 4;
             self.infoLabel.bottom          = 60 - 5.f;
             
         } else if (file.status == FileImportStatusFileError) {
@@ -94,7 +93,7 @@
             self.backgroundContentView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.1f];
             [self.infoLabel sizeToFitWithText:@"文件异常无法导入"];
             self.infoLabel.backgroundColor = [UIColor redColor];
-            self.infoLabel.right           = App.Width - 4.f;
+            self.infoLabel.right           = Width - 4.f;
             self.infoLabel.bottom          = 60 - 5.f;
             
         } else if (file.status == FileImportStatusFileVersionError) {
@@ -102,7 +101,7 @@
             self.backgroundContentView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.1f];
             [self.infoLabel sizeToFitWithText:@"高版本文件无法导入"];
             self.infoLabel.backgroundColor = [UIColor redColor];
-            self.infoLabel.right           = App.Width - 4.f;
+            self.infoLabel.right           = Width - 4.f;
             self.infoLabel.bottom          = 60 - 5.f;
         }
     }

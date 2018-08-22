@@ -11,7 +11,6 @@
 #import "NSString+HexUnicode.h"
 #import "UIView+SetRect.h"
 #import "UIColor+Project.h"
-#import "App.h"
 
 @interface IconFontCell ()
 

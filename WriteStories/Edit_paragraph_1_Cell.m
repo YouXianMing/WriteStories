@@ -44,7 +44,7 @@
     
     id <ArticleEditObjectProtocol> object = data;
     
-    CGFloat width         = App.Width - [BaseArticleEditCell rightViewWidth] - 20.f;
+    CGFloat width         = Width - [BaseArticleEditCell rightViewWidth] - 20.f;
     CGFloat oneLineHeight = [@"我们" heightWithStringFont:[UIFont PingFangSC_Regular_WithFontSize:14.f]           fixedWidth:width];
     CGFloat totalHeight   = [object.cell_text heightWithStringFont:[UIFont PingFangSC_Regular_WithFontSize:14.f] fixedWidth:width];
     

@@ -14,11 +14,11 @@
 #import "UIButton+Inits.h"
 #import "TapAlphaButton.h"
 #import "Values.h"
-#import "App.h"
 #import "GCD.h"
 #import "DateFormatter.h"
 #import "PasswordLock.h"
 #import "HexColors.h"
+#import "DeviceInfo.h"
 #import <MessageUI/MessageUI.h>
 
 typedef enum : NSUInteger {
@@ -55,10 +55,10 @@ typedef enum : NSUInteger {
     
     CGFloat top    = 0.f;
     CGFloat bottom = 0.f;
-    if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+    if (DeviceInfo.isFringeScreen) {
         
-        top    += App.TopSafeHeight;
-        bottom += App.BottomSafeHeight;
+        top    += DeviceInfo.fringeScreenTopSafeHeight;
+        bottom += DeviceInfo.fringeScreenBottomSafeHeight;
     }
     
     self.numbers = [NSMutableArray array];
@@ -69,7 +69,7 @@ typedef enum : NSUInteger {
     
     self.fogetPasswordButton                  = [[TapAlphaButton alloc] initWithFrame:CGRectMake(0, top, 100, 70)];
     self.fogetPasswordButton.titleLabel.font  = [UIFont PingFangSC_Thin_WithFontSize:18.f];
-    self.fogetPasswordButton.right            = App.Width;
+    self.fogetPasswordButton.right            = Width;
     self.fogetPasswordButton.normalTitle      = @"忘记密码";
     self.fogetPasswordButton.normalTitleColor = UIColor.blackColor;
     self.fogetPasswordButton.hidden           = YES;
@@ -84,16 +84,16 @@ typedef enum : NSUInteger {
     self.keyBoard.left       = 0.f;
     [self.contentView addSubview:self.keyBoard];
     
-    self.areaView        = [[UIView alloc] initWithFrame:CGRectMake(0, 100, App.Width, 100)];
+    self.areaView        = [[UIView alloc] initWithFrame:CGRectMake(0, 100, Width, 100)];
     self.areaView.bottom = self.contentView.height / 3.f;
     [self.contentView addSubview:self.areaView];
     
-    self.label               = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, App.Width, 70.f)];
+    self.label               = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, Width, 70.f)];
     self.label.font          = [UIFont PingFangSC_Thin_WithFontSize:16.f];
     self.label.textAlignment = NSTextAlignmentCenter;
     [self.areaView addSubview:self.label];
     
-    self.notiLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, App.Width, 40.f)];
+    self.notiLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Width, 40.f)];
     self.notiLabel.font          = [UIFont PingFangSC_Thin_WithFontSize:14.f];
     self.notiLabel.textAlignment = NSTextAlignmentCenter;
     self.notiLabel.textColor     = [UIColor redColor];
@@ -115,7 +115,7 @@ typedef enum : NSUInteger {
     {
         CGFloat width  = 30.f;
         CGFloat height = 30.f;
-        CGFloat x      = (App.Width - width * 4) / 2.f;
+        CGFloat x      = (Width - width * 4) / 2.f;
         
         for (int i = 0; i < 4; i++) {
             
@@ -148,7 +148,7 @@ typedef enum : NSUInteger {
             
             self.passwordInfoLabel.text = [NSString stringWithFormat:@"您重试次数太多，请%ld分%ld秒后尝试！", [PasswordLock unLockSeconds] / 60, [PasswordLock unLockSeconds] % 60];
             [self.passwordInfoLabel sizeToFit];
-            self.passwordInfoLabel.centerX = App.Width / 2.f;
+            self.passwordInfoLabel.centerX = Width / 2.f;
             self.passwordInfoLabel.top     = self.passwordLockImageView.bottom + 20.f;
         }
     }
@@ -331,7 +331,7 @@ typedef enum : NSUInteger {
                     
                     self.passwordInfoLabel.text = [NSString stringWithFormat:@"您重试次数太多，请%ld分%ld秒后尝试！", [PasswordLock unLockSeconds] / 60, [PasswordLock unLockSeconds] % 60];
                     [self.passwordInfoLabel sizeToFit];
-                    self.passwordInfoLabel.centerX = App.Width / 2.f;
+                    self.passwordInfoLabel.centerX = Width / 2.f;
                     self.passwordInfoLabel.top     = self.passwordLockImageView.bottom + 20.f;
                     
                     [UIView animateWithDuration:0.5f animations:^{
@@ -406,7 +406,7 @@ typedef enum : NSUInteger {
                     
                     self.passwordInfoLabel.text = [NSString stringWithFormat:@"您重试次数太多，请%ld分%ld秒后尝试！", [PasswordLock unLockSeconds] / 60, [PasswordLock unLockSeconds] % 60];
                     [self.passwordInfoLabel sizeToFit];
-                    self.passwordInfoLabel.centerX = App.Width / 2.f;
+                    self.passwordInfoLabel.centerX = Width / 2.f;
                     self.passwordInfoLabel.top     = self.passwordLockImageView.bottom + 20.f;
                     
                     [UIView animateWithDuration:0.5f animations:^{

@@ -12,7 +12,6 @@
 #import "UIView+SetRect.h"
 #import "Table_Folder_Object.h"
 #import "HexColors.h"
-#import "App.h"
 
 @interface MoveMarkToCell ()
 
@@ -31,20 +30,20 @@
 
 - (void)buildSubview {
     
-    self.whiteView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 75.f)];
+    self.whiteView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width, 75.f)];
     self.whiteView.backgroundColor = [UIColor whiteColor];
     [self.contentView addSubview:self.whiteView];
     
-    self.titleLabel      = [[UILabel alloc] initWithFrame:CGRectMake(25.f, 0, App.Width - 110, 75)];
+    self.titleLabel      = [[UILabel alloc] initWithFrame:CGRectMake(25.f, 0, Width - 110, 75)];
     self.titleLabel.font = [UIFont PingFangSC_Regular_WithFontSize:25.f];
     [self.whiteView addSubview:self.titleLabel];
     
     self.countLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 75.f)];
-    self.countLabel.right         = App.Width - 17.f;
+    self.countLabel.right         = Width - 17.f;
     self.countLabel.textAlignment = NSTextAlignmentRight;
     [self.whiteView addSubview:self.countLabel];
     
-    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 74.5, App.Width, 0.5f)];
+    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 74.5, Width, 0.5f)];
     line.backgroundColor = UIColor.LineColor;
     [self.contentView addSubview:line];
 }

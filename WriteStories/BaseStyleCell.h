@@ -13,7 +13,6 @@
 #import "NSString+LabelWidthAndHeight.h"
 #import "HexColors.h"
 #import "BaseBlockItem.h"
-#import "App.h"
 
 @interface BaseStyleCell : CustomCell
 

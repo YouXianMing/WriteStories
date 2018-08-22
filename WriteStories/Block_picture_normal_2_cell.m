@@ -21,13 +21,13 @@
     
     [super buildSubview];
     
-    self.pictureView               = [[UIImageView alloc] initWithFrame:CGRectMake(15, 5.f, App.Width - 30.f, 150.f)];
+    self.pictureView               = [[UIImageView alloc] initWithFrame:CGRectMake(15, 5.f, Width - 30.f, 150.f)];
     self.pictureView.contentMode   = UIViewContentModeScaleAspectFill;
     self.pictureView.image         = [UIImage imageNamed:@"styles_jpeg"];
     self.pictureView.clipsToBounds = YES;
     [self.contentView addSubview:self.pictureView];
     
-    UILabel *label      = [[UILabel alloc] initWithFrame:CGRectMake(0, 155.f + 5, App.Width, 15)];
+    UILabel *label      = [[UILabel alloc] initWithFrame:CGRectMake(0, 155.f + 5, Width, 15)];
     label.text          = @"图片描述信息";
     label.textAlignment = NSTextAlignmentCenter;
     label.font          = [UIFont PingFangSC_Thin_WithFontSize:12.f];

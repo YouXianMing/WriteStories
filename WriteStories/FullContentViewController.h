@@ -12,7 +12,7 @@
 #import "UIView+SetRect.h"
 #import "UIButton+Inits.h"
 #import "CircleIconButton.h"
-#import "App.h"
+#import "DeviceInfo.h"
 
 @interface FullContentViewController : BaseCustomViewController
 

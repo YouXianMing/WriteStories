@@ -17,9 +17,9 @@
 - (void)makeViewsConfig:(NSMutableDictionary<NSString *,ControllerBaseViewConfig *> *)viewsConfig {
     
     CGFloat titleViewHeight = 64.f;
-    if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+    if (DeviceInfo.isFringeScreen) {
         
-        titleViewHeight += App.TopSafeHeight;
+        titleViewHeight += DeviceInfo.fringeScreenTopSafeHeight;
     }
     
     // 更新titleView尺寸
@@ -27,9 +27,9 @@
         ControllerBaseViewConfig *config = viewsConfig[titleViewId];
         config.backgroundColor           = UIColor.whiteColor;
         
-        if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+        if (DeviceInfo.isFringeScreen) {
             
-            config.frame = CGRectMake(0, 0, App.Width, titleViewHeight);
+            config.frame = CGRectMake(0, 0, Width, titleViewHeight);
         }
     }
     
@@ -37,9 +37,9 @@
     {
         ControllerBaseViewConfig *config = viewsConfig[contentViewId];
         
-        if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+        if (DeviceInfo.isFringeScreen) {
             
-            config.frame = CGRectMake(0, titleViewHeight, App.Width, App.Height - titleViewHeight);
+            config.frame = CGRectMake(0, titleViewHeight, Width, Height - titleViewHeight);
         }
     }
     
@@ -57,17 +57,17 @@
     bgImageView.userInteractionEnabled = NO;
     [self.titleView addSubview:bgImageView];
     
-    UIImageView *shadeImageView           = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 2.f)];
+    UIImageView *shadeImageView           = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, Width, 2.f)];
     shadeImageView.image                  = [UIImage imageNamed:@"shade"];
     shadeImageView.userInteractionEnabled = NO;
     shadeImageView.top                    = self.titleView.height;
     [self.titleView addSubview:shadeImageView];
     
-    self.titleContentView        = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 64.f)];
+    self.titleContentView        = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width, 64.f)];
     self.titleContentView.bottom = self.titleView.height;
     [self.titleView addSubview:self.titleContentView];
     
-    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, App.Width - 100, 64.f)];
+    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, Width - 100, 64.f)];
     self.titleLabel.font          = [UIFont PingFangSC_Medium_WithFontSize:23.f];
     self.titleLabel.centerX       = self.titleContentView.middleX;
     self.titleLabel.textColor     = [UIColor TextMainColor];

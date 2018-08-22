@@ -12,7 +12,6 @@
 #import "UIFont+Project.h"
 #import "UIColor+Project.h"
 #import "HexColors.h"
-#import "App.h"
 
 @interface RootMenuCollectionCell : BaseCustomCollectionCell
 

@@ -8,7 +8,7 @@
 
 #import "TextInputEditorView.h"
 #import "UIView+SetRect.h"
-#import "App.h"
+#import "DeviceInfo.h"
 
 @interface TextInputEditorView () <UITextViewDelegate>
 
@@ -22,19 +22,19 @@
 
 - (void)buildSubViews {
     
-    CGFloat textViewHeight = App.Height - StatusBarAndNavigationBarHeight - self.class.titleHeight;
-    if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+    CGFloat textViewHeight = Height - StatusBarAndNavigationBarHeight - self.class.titleHeight;
+    if (DeviceInfo.isFringeScreen) {
         
-        textViewHeight -= App.TopSafeHeight;
+        textViewHeight -= DeviceInfo.fringeScreenTopSafeHeight;
     }
     
     self.countLabel               = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, self.class.titleHeight)];
     self.countLabel.textAlignment = NSTextAlignmentRight;
-    self.countLabel.right         = App.Width - 10.f;
+    self.countLabel.right         = Width - 10.f;
     self.countLabel.font          = [UIFont PingFangSC_Thin_WithFontSize:15.f];
     [self.titleView addSubview:self.countLabel];
     
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, self.class.titleHeight, App.Width, textViewHeight)];
+    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, self.class.titleHeight, Width, textViewHeight)];
     [self addSubview:self.contentView];
 
     // textView
@@ -49,7 +49,7 @@
                                        NSParagraphStyleAttributeName : style};
     [self.contentView addSubview:self.textView];
     
-    UIView *lineView         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 0.5f)];
+    UIView *lineView         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width, 0.5f)];
     lineView.backgroundColor = UIColor.LineColor;
     [self.contentView addSubview:lineView];
 }

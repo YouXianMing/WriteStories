@@ -9,7 +9,6 @@
 #import "NoticeInfoCell.h"
 #import "UIView+SetRect.h"
 #import "UIFont+Project.h"
-#import "App.h"
 #import "HexColors.h"
 #import "DateFormatter.h"
 #import "NSString+LabelWidthAndHeight.h"
@@ -39,7 +38,7 @@
 - (void)loadContent {
     
     self.infoLabel.text  = self.data;
-    self.infoLabel.width = App.Width - 30.f;
+    self.infoLabel.width = Width - 30.f;
     [self.infoLabel sizeToFit];
     self.infoLabel.left  = 15.f;
     self.infoLabel.top   = 10.f;
@@ -48,7 +47,7 @@
 + (CGFloat)cellHeightWithData:(id)data {
     
     NSString *text = data;
-    return 10 + [text heightWithStringFont:[UIFont PingFangSC_Thin_WithFontSize:10.f] fixedWidth:App.Width - 30.f] + 10;
+    return 10 + [text heightWithStringFont:[UIFont PingFangSC_Thin_WithFontSize:10.f] fixedWidth:Width - 30.f] + 10;
 }
 
 @end

@@ -16,9 +16,9 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     
-    if (self = [super initWithFrame:CGRectMake(0, 0, App.Width, 0)]) {
+    if (self = [super initWithFrame:CGRectMake(0, 0, Width, 0)]) {
         
-        self.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width, self.class.titleHeight)];
+        self.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width, self.class.titleHeight)];
         [self addSubview:self.titleView];
 
         UIView *leftLine         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 3.f, 15.f)];

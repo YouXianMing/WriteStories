@@ -10,6 +10,7 @@
 #import "StyleManagerEditViewCell.h"
 #import "Table_Style_List.h"
 #import "StyleSaveView.h"
+#import "DeviceInfo.h"
 
 @interface StyleManagerEditView () <UICollectionViewDelegate, UICollectionViewDataSource, CustomCollectionCellDelegate>
 
@@ -42,13 +43,13 @@
     [self buildTitle];
     
     CGFloat bottomSafeHeight = 0;
-    if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+    if (DeviceInfo.isFringeScreen) {
         
-        bottomSafeHeight += App.BottomSafeHeight;
+        bottomSafeHeight += DeviceInfo.fringeScreenBottomSafeHeight;
     }
     
     // 容器view
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 45.f, App.Width, self.areaView.height - 45.f)];
+    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 45.f, Width, self.areaView.height - 45.f)];
     [self.areaView addSubview:self.contentView];
     
     // 布局

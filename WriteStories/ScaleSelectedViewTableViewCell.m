@@ -10,7 +10,7 @@
 #import "EncodeImageObject.h"
 #import "UIColor+Project.h"
 #import "UIFont+Project.h"
-#import "App.h"
+#import "UIView+SetRect.h"
 
 @interface ScaleSelectedViewTableViewCell ()
 
@@ -22,12 +22,12 @@
 
 - (void)buildSubview {
  
-    self.contentlabel               = [[UILabel alloc] initWithFrame:CGRectMake(0.f, 0, App.Width - 120.f, 50.f)];
+    self.contentlabel               = [[UILabel alloc] initWithFrame:CGRectMake(0.f, 0, Width - 120.f, 50.f)];
     self.contentlabel.font          = [UIFont EN_LatoThinItalicWithFontSize:20.f];
     self.contentlabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.contentlabel];
     
-    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 49.5f, App.Width - 10, 0.5f)];
+    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 49.5f, Width - 10, 0.5f)];
     line.backgroundColor = UIColor.LineColor;
     [self.contentView addSubview:line];
 }

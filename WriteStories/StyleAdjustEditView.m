@@ -46,7 +46,7 @@
     ColorAlphaButton *button = [[ColorAlphaButton alloc] initWithFrame:CGRectMake(0, 0, 100, 28.f)];
     button.backgroundColor   = [UIColor colorWithHexString:@"#d4d4d4"];
     button.centerY           = 25.f;
-    button.right             = App.Width - 10.f;
+    button.right             = Width - 10.f;
     button.titleLabel.font   = [UIFont PingFangSC_Medium_WithFontSize:40 / 3.f];
     [button addTarget:self action:@selector(saveEvent) forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"保存当前样式" forState:UIControlStateNormal];
@@ -94,7 +94,7 @@
     leftLine.backgroundColor = UIColor.LineColor;
     [self.contentView addSubview:leftLine];
     
-    UIView *bottomLine         = [[UIView alloc] initWithFrame:CGRectMake(0, self.contentView.height, App.Width, 0.5f)];
+    UIView *bottomLine         = [[UIView alloc] initWithFrame:CGRectMake(0, self.contentView.height, Width, 0.5f)];
     bottomLine.backgroundColor = UIColor.LineColor;
     [self.contentView addSubview:bottomLine];
 }
@@ -103,11 +103,11 @@
     
     [self buildTitle];
     
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 45.f, App.Width, 250.f - 45.f)];
+    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 45.f, Width, 250.f - 45.f)];
     [self.areaView addSubview:self.contentView];
     
     self.setupView                     = [[UIView alloc] initWithFrame:CGRectMake(self.class.StyleAdjustEditViewLeftLineGap, 0,
-                                                                                  App.Width - self.class.StyleAdjustEditViewLeftLineGap, self.contentView.height)];
+                                                                                  Width - self.class.StyleAdjustEditViewLeftLineGap, self.contentView.height)];
     self.setupView.layer.masksToBounds = YES;
     [self.contentView addSubview:self.setupView];
     

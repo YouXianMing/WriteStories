@@ -12,7 +12,6 @@
 #import "UIView+SetRect.h"
 #import "HexColors.h"
 #import "StyleSectionObject.h"
-#import "App.h"
 
 @interface StyleSectionHeaderView ()
 
@@ -40,7 +39,7 @@
     self.contentLabel.textColor = [UIColor colorWithHexString:@"#303030"];
     [self.contentView addSubview:self.contentLabel];
     
-    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 29.5f, App.Width, 0.5f)];
+    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 29.5f, Width, 0.5f)];
     line.backgroundColor = UIColor.LineColor;
     [self.contentView addSubview:line];
 }

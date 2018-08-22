@@ -9,7 +9,6 @@
 #import "Block_title_picture_1_cell.h"
 #import "Block_title_picture_1.h"
 #import "UIView+SetRect.h"
-#import "App.h"
 
 @interface Block_title_picture_1_cell ()
 
@@ -24,13 +23,13 @@
     
     [super buildSubview];
     
-    self.pictureView               = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 150.f)];
+    self.pictureView               = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, Width, 150.f)];
     self.pictureView.contentMode   = UIViewContentModeScaleAspectFill;
     self.pictureView.image         = [UIImage imageNamed:@"styles_jpeg"];
     self.pictureView.clipsToBounds = YES;
     [self.contentView addSubview:self.pictureView];
     
-    UIView *maskView         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 150.f)];
+    UIView *maskView         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width, 150.f)];
     maskView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.65f];
     [self.contentView addSubview:maskView];
     
@@ -42,7 +41,7 @@
     [self.contentLabel sizeToFit];
     [self.contentView addSubview:self.contentLabel];
     
-    self.contentLabel.center = CGPointMake(App.HalfWidth, 150.f / 2.f);
+    self.contentLabel.center = CGPointMake(Width / 2.f, 150.f / 2.f);
 }
 
 - (void)loadContent {

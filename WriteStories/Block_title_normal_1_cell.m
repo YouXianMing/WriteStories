@@ -28,7 +28,7 @@
     [self.contentLabel sizeToFit];
     [self.contentView addSubview:self.contentLabel];
 
-    self.contentLabel.center = CGPointMake(App.HalfWidth, 60.f);
+    self.contentLabel.center = CGPointMake(Width / 2.f, 60.f);
 }
 
 - (void)loadContent {

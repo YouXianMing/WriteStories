@@ -9,7 +9,6 @@
 #import "StoreViewController.h"
 #import "StoreButtonsView.h"
 #import "UIView+SetRect.h"
-#import "App.h"
 #import "PaymentsManager.h"
 
 #import "StoreFolderView.h"
@@ -43,12 +42,12 @@
     
     [super viewDidLoad];
     
-    self.buttonsView              = [[StoreButtonsView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 50.f)];
+    self.buttonsView              = [[StoreButtonsView alloc] initWithFrame:CGRectMake(0, 0, Width, 50.f)];
     self.buttonsView.selectedItem = self.selectedItem;
     self.buttonsView.delegate     = self;
     [self.contentView addSubview:self.buttonsView];
     
-    CGRect rect = CGRectMake(0, self.buttonsView.height, App.Width, self.contentView.height - self.buttonsView.height);
+    CGRect rect = CGRectMake(0, self.buttonsView.height, Width, self.contentView.height - self.buttonsView.height);
     
     // 文件夹
     self.storeFolderView          = [[StoreFolderView alloc] initWithFrame:rect];
@@ -290,7 +289,7 @@
     
     self.restoreButton                 = [UIButton buttonWithType:UIButtonTypeSystem];
     self.restoreButton.frame           = CGRectMake(0, 0, 100, self.titleContentView.height);
-    self.restoreButton.right           = App.Width;
+    self.restoreButton.right           = Width;
     self.restoreButton.tintColor       = UIColor.blackColor;
     self.restoreButton.titleLabel.font = [UIFont PingFangSC_Regular_WithFontSize:16.f];
     [self.restoreButton setTitle:@"恢复购买" forState:UIControlStateNormal];

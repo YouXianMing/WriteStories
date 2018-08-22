@@ -56,9 +56,9 @@ typedef enum : NSUInteger {
     [self reCreateData];
     
     CGFloat bottomHeight = 55.f;
-    if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+    if (DeviceInfo.isFringeScreen) {
         
-        bottomHeight += App.BottomSafeHeight;
+        bottomHeight += DeviceInfo.fringeScreenBottomSafeHeight;
     }
     
     // tableView
@@ -74,14 +74,14 @@ typedef enum : NSUInteger {
     [FileCell registerToTableView:self.tableView];
     
     // button
-    self.importButton                 = [[TapAlphaButton alloc] initWithFrame:CGRectMake(0, self.contentView.height - bottomHeight, App.Width, bottomHeight)];
+    self.importButton                 = [[TapAlphaButton alloc] initWithFrame:CGRectMake(0, self.contentView.height - bottomHeight, Width, bottomHeight)];
     self.importButton.backgroundColor = [UIColor colorWithHexString:@"#309ddc"];
     self.importButton.tag             = kButton_Import;
     [self.importButton addTarget:self action:@selector(buttonsEvent:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:self.importButton];
     
     // buttonTitle
-    self.titleLabel                        = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, App.Width, 55.f)];
+    self.titleLabel                        = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Width, 55.f)];
     self.titleLabel.font                   = [UIFont PingFangSC_Regular_WithFontSize:20.f];
     self.titleLabel.textColor              = [UIColor whiteColor];
     self.titleLabel.textAlignment          = NSTextAlignmentCenter;
@@ -91,7 +91,7 @@ typedef enum : NSUInteger {
     // noDataImageView
     self.noDataImageView        = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"noData"]];
     self.noDataImageView.alpha  = 0.f;
-    self.noDataImageView.center = CGPointMake(App.HalfWidth, (self.contentView.height - bottomHeight) / 2.f);
+    self.noDataImageView.center = CGPointMake(Width / 2.f, (self.contentView.height - bottomHeight) / 2.f);
     [self.contentView addSubview:self.noDataImageView];
     
     [self updateTitleLabel];

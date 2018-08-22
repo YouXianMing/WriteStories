@@ -11,7 +11,7 @@
 #import "UIColor+Project.h"
 #import "UIFont+Project.h"
 #import "HexColors.h"
-#import "App.h"
+#import "UIView+SetRect.h"
 
 @interface MoveMarkToHeaderView ()
 
@@ -33,7 +33,7 @@
     self.titleLabel.textColor = [UIColor colorWithHexString:@"#303030"];
     [self.contentView addSubview:self.titleLabel];
     
-    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 29.5, App.Width, 0.5f)];
+    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 29.5, Width, 0.5f)];
     line.backgroundColor = UIColor.LineColor;
     [self.contentView addSubview:line];
 }

@@ -41,14 +41,13 @@
      
      独立开发作品 (感兴趣的朋友支持一下^_^) : https://itunes.apple.com/cn/app/美记/id1390862464
      
-     本人在项目中有使用中文文件夹,但在公司项目中请不要这么做!
+     本人在项目中有使用中文文件夹,但在公司项目中请不要这么使用!
      */
     
     // 避免多个按钮同时点击
     UIButton.appearance.exclusiveTouch = YES;
     
     Values_prepare();
-    [App prepare];
     [IconFontsManager prepare];
     [FoldersManager prepare];
     [DBManager prepare];
@@ -59,8 +58,6 @@
     [PaymentsManager prepare];
     [PaymentsManager update];
     [ZipsUnzip prepare];
-    
-    NSLog(@"%.1f x %.1f", App.Width, App.Height);
     
     // Init window.
     self.window                    = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

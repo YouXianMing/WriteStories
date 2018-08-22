@@ -8,7 +8,7 @@
 
 #import "EditView.h"
 #import "PointInsideView.h"
-#import "App.h"
+#import "DeviceInfo.h"
 #import "YXEasing.h"
 #import "UIView+SetRect.h"
 #import "HexColors.h"
@@ -24,19 +24,19 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     
     CGFloat bottomSafeHeight = 0;
-    if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+    if (DeviceInfo.isFringeScreen) {
         
-        bottomSafeHeight += App.BottomSafeHeight;
+        bottomSafeHeight += DeviceInfo.fringeScreenBottomSafeHeight;
     }
     
-    if (self = [super initWithFrame:CGRectMake(0, 0, App.Width, 300.f + bottomSafeHeight)]) {
+    if (self = [super initWithFrame:CGRectMake(0, 0, Width, 300.f + bottomSafeHeight)]) {
         
-        self.areaView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 50.f, App.Width, 250.f + bottomSafeHeight)];
+        self.areaView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 50.f, Width, 250.f + bottomSafeHeight)];
         self.areaView.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.areaView];
         
         // 阴影
-        UIImageView *shadeImageView           = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 2.f)];
+        UIImageView *shadeImageView           = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, Width, 2.f)];
         shadeImageView.image                  = [UIImage imageNamed:@"shade-"];
         shadeImageView.bottom                 = 0.f;
         shadeImageView.alpha                  = 0.25f;
@@ -60,7 +60,7 @@
     UIButton *button        = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, 45)];
     button.normalImage      = [UIImage imageNamed:@"menuClose"];
     button.highlightedImage = [UIImage imageNamed:@"menuClose-pre"];
-    button.right            = App.Width + 25.f;
+    button.right            = Width + 25.f;
     [button addTarget:self action:@selector(hide)];
     [self.areaView addSubview:button];
     
@@ -83,7 +83,7 @@
     [self.layer addAnimation:keyAnimation forKey:nil];
     
     {
-        UIView *lineView         = [[UIView alloc] initWithFrame:CGRectMake(0, 45.f, App.Width, 0.5f)];
+        UIView *lineView         = [[UIView alloc] initWithFrame:CGRectMake(0, 45.f, Width, 0.5f)];
         lineView.backgroundColor = UIColor.LineColor;
         [self.areaView addSubview:lineView];
     }

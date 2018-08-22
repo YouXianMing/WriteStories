@@ -21,7 +21,7 @@
     
     [super buildSubview];
     
-    self.pictureView               = [[UIImageView alloc] initWithFrame:CGRectMake(15, 5.f, App.Width - 30.f, 150.f)];
+    self.pictureView               = [[UIImageView alloc] initWithFrame:CGRectMake(15, 5.f, Width - 30.f, 150.f)];
     self.pictureView.contentMode   = UIViewContentModeScaleAspectFill;
     self.pictureView.image         = [UIImage imageNamed:@"styles_jpeg"];
     self.pictureView.clipsToBounds = YES;

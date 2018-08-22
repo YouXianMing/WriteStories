@@ -12,7 +12,7 @@
 
 + (BaseAnimationView *)defaultView {
     
-    BaseAnimationView *animationView = [[self alloc] initWithFrame:CGRectMake(0, 0, App.Width, 0)];
+    BaseAnimationView *animationView = [[self alloc] initWithFrame:CGRectMake(0, 0, Width, 0)];
     [animationView buildSubViews];
         
     return animationView;

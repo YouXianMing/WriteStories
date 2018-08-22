@@ -11,7 +11,6 @@
 #import "UIColor+Project.h"
 #import "UIFont+Project.h"
 #import "HexColors.h"
-#import "App.h"
 #import "SetupViewSwitchCellModel.h"
 
 @interface SetupViewSwitchCell ()
@@ -31,7 +30,7 @@
 
 - (void)buildSubview {
     
-    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 59.5f, App.Width, 0.5f)];
+    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 59.5f, Width, 0.5f)];
     line.backgroundColor = [UIColor.LineColor colorWithAlphaComponent:0.5];
     [self.contentView addSubview:line];
     
@@ -46,7 +45,7 @@
     [self.contentView addSubview:self.subTitleLabel];
     
     self.switchButton             = [UISwitch new];
-    self.switchButton.right       = App.Width - 15.f;
+    self.switchButton.right       = Width - 15.f;
     self.switchButton.centerY     = 30.f;
     self.switchButton.onTintColor = [UIColor colorWithHexString:@"38a1dd"];
     [self.switchButton addTarget:self action:@selector(switchsEvent:) forControlEvents:UIControlEventValueChanged];

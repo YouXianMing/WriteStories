@@ -10,7 +10,6 @@
 #import "UIFont+Project.h"
 #import "UIColor+Project.h"
 #import "UIView+SetRect.h"
-#import "App.h"
 
 @interface SetupViewSelectCell ()
 
@@ -27,7 +26,7 @@
 
 - (void)buildSubview {
     
-    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 54.5f, App.Width, 0.5f)];
+    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 54.5f, Width, 0.5f)];
     line.backgroundColor = [UIColor.LineColor colorWithAlphaComponent:0.5f];
     [self.contentView addSubview:line];
     
@@ -37,7 +36,7 @@
     [self.contentView addSubview:self.titleLabel];
     
     UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"choose"]];
-    arrow.right        = App.Width - 15.f;
+    arrow.right        = Width - 15.f;
     arrow.centerY      = 25.f;
     [self.contentView addSubview:arrow];
 }

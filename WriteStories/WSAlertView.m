@@ -11,7 +11,6 @@
 #import "UIFont+Project.h"
 #import "WSAlertViewButton.h"
 #import "GCD.h"
-#import "App.h"
 
 @interface WSAlertView ()
 
@@ -46,7 +45,7 @@
     
     [self.keyWindow addSubview:self];
     
-    self.contentView       = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width - 100.f, 0.f)];
+    self.contentView       = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width - 100.f, 0.f)];
     self.contentView.alpha = 0.f;
     [self addSubview:self.contentView];
     
@@ -84,7 +83,7 @@
         UIFont *light  = [UIFont PingFangSC_Light_WithFontSize:18.f];
         UIFont *medium = [UIFont PingFangSC_Medium_WithFontSize:18.f];
         
-        if (App.Width == 320.f) {
+        if (Width == 320.f) {
             
             light  = [UIFont PingFangSC_Light_WithFontSize:16.f];
             medium = [UIFont PingFangSC_Medium_WithFontSize:16.f];

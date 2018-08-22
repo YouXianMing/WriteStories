@@ -11,7 +11,6 @@
 #import "UIFont+Project.h"
 #import "UIColor+Project.h"
 #import "GCD.h"
-#import "App.h"
 
 #pragma mark - StyleSaveViewButton
 
@@ -97,7 +96,7 @@ typedef enum : NSUInteger {
     
     [UIView animateWithDuration:duration delay:0.f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         
-        if (keyboardF.origin.y == App.Height) {
+        if (keyboardF.origin.y == Height) {
             
             self.contentView.center = self.keyWindow.middlePoint;
             
@@ -113,7 +112,7 @@ typedef enum : NSUInteger {
     
     [self.keyWindow addSubview:self];
     
-    self.contentView        = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width - 125.f, 190)];
+    self.contentView        = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width - 125.f, 190)];
     self.contentView.alpha  = 0.f;
     self.contentView.center = self.middlePoint;
     [self addSubview:self.contentView];

@@ -9,7 +9,6 @@
 #import "BaseFolderItemCell.h"
 #import "BaseFolderItem.h"
 #import "PaymentLabel.h"
-#import "App.h"
 
 @interface BaseFolderItemCell ()
 
@@ -80,7 +79,7 @@
     self.payLabel.right  = self.width - 10.f;
     [self.contentView addSubview:self.payLabel];
     
-    if (App.Width == 320.f) {
+    if (Width == 320.f) {
         
         self.titleLabel.font = [UIFont PingFangSC_Semibold_WithFontSize:15.f];
         self.countLabel.font = [UIFont PingFangSC_Regular_WithFontSize:7.f];

@@ -8,7 +8,6 @@
 
 #import "Mark_time.h"
 #import "DateFormatter.h"
-#import "App.h"
 
 @implementation Mark_time
 
@@ -377,7 +376,7 @@
     item.lineColorHex = @"#565051";
     item.lineAlpha    = @(0.15);
     
-    if (App.Width == 320.f) {
+    if (Width == 320.f) {
         
         item.timeFontSize     = @(26);
         item.subTitleFontSize = @(15);

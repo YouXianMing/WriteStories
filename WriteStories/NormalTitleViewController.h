@@ -9,7 +9,7 @@
 #import "BaseCustomViewController.h"
 #import "HexColors.h"
 #import "UIView+SetRect.h"
-#import "App.h"
+#import "DeviceInfo.h"
 #import "TitleMenuButton.h"
 #import "UIColor+Project.h"
 #import "UIFont+Project.h"

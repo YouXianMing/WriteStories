@@ -7,7 +7,6 @@
 //
 
 #import "CustomCell.h"
-#import "App.h"
 #import "UIView+SetRect.h"
 #import "UIColor+Project.h"
 #import "UIFont+Project.h"

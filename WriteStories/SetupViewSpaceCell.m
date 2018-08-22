@@ -9,7 +9,6 @@
 #import "SetupViewSpaceCell.h"
 #import "UIColor+Project.h"
 #import "UIView+SetRect.h"
-#import "App.h"
 
 @implementation SetupViewSpaceCell
 
@@ -20,7 +19,7 @@
 
 - (void)buildSubview {
     
-    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 19.5f, App.Width, 0.5f)];
+    UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, 19.5f, Width, 0.5f)];
     line.backgroundColor = [UIColor.LineColor colorWithAlphaComponent:0.5];
     [self.contentView addSubview:line];
 }

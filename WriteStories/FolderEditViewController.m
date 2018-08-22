@@ -35,7 +35,7 @@
     [super viewDidLoad];
         
     CGFloat gap       = 15.f;
-    CGFloat itemWidth = (App.Width - gap * 3) / 2.f;
+    CGFloat itemWidth = (Width - gap * 3) / 2.f;
     
     self.layout          = [UICollectionViewFlowLayout new];
     self.layout.itemSize = CGSizeMake(itemWidth, 40 + itemWidth);
@@ -46,7 +46,7 @@
     self.collectionView.dataSource             = self;
     self.collectionView.contentInset           = UIEdgeInsetsMake(gap, gap, gap, gap);
     self.collectionView.backgroundColor        = [UIColor clearColor];
-    self.collectionView.centerX                = App.HalfWidth;
+    self.collectionView.centerX                = Width / 2.f;
     self.collectionView.userInteractionEnabled = NO;
     [self.contentView addSubview:self.collectionView];
     
@@ -55,13 +55,13 @@
     [self.adapters addObject:self.folderItem.collectionViewAdapter];
     
     CGFloat safeBottomHeight = 0;
-    if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+    if (DeviceInfo.isFringeScreen) {
         
-        safeBottomHeight = App.BottomSafeHeight;
+        safeBottomHeight = DeviceInfo.fringeScreenBottomSafeHeight;
     }
     
-    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 80.f)];
-    contentView.bottom  = App.Height - 120.f - safeBottomHeight;
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width, 80.f)];
+    contentView.bottom  = Height - 120.f - safeBottomHeight;
     [self.contentView addSubview:contentView];
     
     // 信息编辑 + 样式调整 + 样式管理

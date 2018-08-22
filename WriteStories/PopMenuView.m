@@ -8,7 +8,6 @@
 
 #import "PopMenuView.h"
 #import "UIView+SetRect.h"
-#import "App.h"
 #import "PopMenuButton.h"
 #import "PopMenuObject.h"
 #import "UIButton+Inits.h"

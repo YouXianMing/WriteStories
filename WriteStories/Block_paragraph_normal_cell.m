@@ -27,7 +27,7 @@ static NSString *_demo = @"夫君子之行，静以修身，俭以养德。非�
     self.contentLabel.text          = _demo;
     self.contentLabel.numberOfLines = 0;
     self.contentLabel.font          = [UIFont PingFangSC_Light_WithFontSize:16.f];
-    self.contentLabel.width         = App.Width - 20.f;
+    self.contentLabel.width         = Width - 20.f;
     [self.contentLabel sizeToFit];
     [self.contentView addSubview:self.contentLabel];
     
@@ -42,7 +42,7 @@ static NSString *_demo = @"夫君子之行，静以修身，俭以养德。非�
 
 + (CGFloat)cellHeightWithData:(id)data {
 
-    return  12.f + [_demo heightWithStringFont:[UIFont PingFangSC_Light_WithFontSize:16.f] fixedWidth:App.Width - 20.f] + 12.f;
+    return  12.f + [_demo heightWithStringFont:[UIFont PingFangSC_Light_WithFontSize:16.f] fixedWidth:Width - 20.f] + 12.f;
 }
 
 - (BaseBlockItem *)blockItem {

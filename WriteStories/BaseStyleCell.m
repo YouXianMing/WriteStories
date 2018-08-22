@@ -18,7 +18,7 @@
 
 - (void)buildSubview {
     
-    self.lineView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 0.5f)];
+    self.lineView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width, 0.5f)];
     self.lineView.backgroundColor = UIColor.LineColor;
     [self.contentView addSubview:self.lineView];
 }

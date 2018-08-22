@@ -73,7 +73,7 @@
     self.animationSet       = [Animation_Set decodeWithData:[NSData dataWithContentsOfFile:animationPath]];
     
     // 加载动画页面
-    self.animationSetView            = [[Animation_Set_View alloc] initWithFrame:CGRectMake(0, 0, App.Width, 0)];
+    self.animationSetView            = [[Animation_Set_View alloc] initWithFrame:CGRectMake(0, 0, Width, 0)];
     self.animationSetView.scrollView = self.wkWebView.scrollView;
     [self.animationSetView startObserveValue];
     [self.animationSetView firstTimeLoadAnimation_Set:self.animationSet];
@@ -120,15 +120,22 @@
         
         // 编辑按钮
         CircleIconButton *editButton = [[CircleIconButton alloc] initWithType:CircleIconButtonType_Edit];
-        editButton.right             = App.Width - 20.f;
+        editButton.right             = Width - 20.f;
         editButton.top               = 20.f;
         [self.contentView addSubview:editButton];
         [editButton addTarget:self action:@selector(buttonsEvent:)];
         
-        if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+        if (DeviceInfo.isFringeScreen) {
             
-            backButton.top = 20 + App.TopSafeHeight;
-            editButton.top = 20 + App.TopSafeHeight;
+            backButton.top = 20 + DeviceInfo.fringeScreenTopSafeHeight;
+            editButton.top = 20 + DeviceInfo.fringeScreenTopSafeHeight;
+        }
+        
+    } else {
+        
+        if (DeviceInfo.isFringeScreen) {
+            
+            backButton.top = 20 + DeviceInfo.fringeScreenTopSafeHeight;
         }
     }
 }

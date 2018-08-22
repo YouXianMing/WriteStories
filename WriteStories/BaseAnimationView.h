@@ -10,7 +10,6 @@
 #import "CAEmitterView.h"
 #import "UIView+SetRect.h"
 #import "Math.h"
-#import "App.h"
 
 @interface BaseAnimationView : UIView
 

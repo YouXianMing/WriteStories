@@ -21,7 +21,7 @@
 - (void)buildCollectionView {
     
     CGFloat gap       = 15.f;
-    CGFloat itemWidth = App.Width - gap * 2;
+    CGFloat itemWidth = Width - gap * 2;
     
     self.layout = [UICollectionViewFlowLayout new];
     self.layout.minimumLineSpacing      = gap;

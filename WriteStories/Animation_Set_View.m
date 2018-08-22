@@ -39,12 +39,12 @@
     
     CGSize size = [change[@"new"] CGSizeValue];
     
-    if (CGRectEqualToRect(_currentFrame, CGRectMake(0, 0, App.Width, size.height)) == YES) {
+    if (CGRectEqualToRect(_currentFrame, CGRectMake(0, 0, Width, size.height)) == YES) {
         
         return;
     }
     
-    self.frame    = CGRectMake(0, 0, App.Width, size.height);
+    self.frame    = CGRectMake(0, 0, Width, size.height);
     _currentFrame = self.frame;
     
     // 更新AnimationView的frame值

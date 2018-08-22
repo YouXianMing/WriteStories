@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "App.h"
 #import "UIView+SetRect.h"
 #import "BaseCustomCollectionCell.h"
 #import "Math.h"

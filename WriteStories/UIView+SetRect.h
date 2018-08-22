@@ -8,6 +8,46 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  UIScreen width.
+ */
+#define  Width      UIScreen.mainScreen.bounds.size.width
+
+/**
+ *  UIScreen width's 1/2.
+ */
+#define  HalfWidth  (UIScreen.mainScreen.bounds.size.width / 2.f)
+
+/**
+ *  UIScreen height.
+ */
+#define  Height     UIScreen.mainScreen.bounds.size.height
+
+/**
+ *  UIScreen height's 1/2.
+ */
+#define HalfHeight  (UIScreen.mainScreen.bounds.size.height / 2.f)
+
+/**
+ *  Status bar height.
+ */
+#define  StatusBarHeight      20.f
+
+/**
+ *  Navigation bar height.
+ */
+#define  NavigationBarHeight  44.f
+
+/**
+ *  Tabbar height.
+ */
+#define  TabbarHeight         49.f
+
+/**
+ *  Status bar & navigation bar height.
+ */
+#define  StatusBarAndNavigationBarHeight   (20.f + 44.f)
+
 @interface UIView (SetRect)
 
 /*----------------------

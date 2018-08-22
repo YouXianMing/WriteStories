@@ -20,14 +20,14 @@
 
     CGFloat width = self.class.rightViewWidth;
     
-    self.areaView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width - width, 0)];
+    self.areaView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width - width, 0)];
     [self.contentView addSubview:self.areaView];
     
-    self.rightView                 = [[UIView alloc] initWithFrame:CGRectMake(App.Width - width, 0, width, 0)];
+    self.rightView                 = [[UIView alloc] initWithFrame:CGRectMake(Width - width, 0, width, 0)];
     self.rightView.backgroundColor = [UIColor colorWithHexString:@"#ededed"];
     [self.contentView addSubview:self.rightView];
     
-    self.deleteButton                  = [[TapAlphaButton alloc] initWithFrame:CGRectMake(App.Width - width, 0, width, 0)];
+    self.deleteButton                  = [[TapAlphaButton alloc] initWithFrame:CGRectMake(Width - width, 0, width, 0)];
     self.deleteButton.normalImage      = [UIImage imageNamed:@"save-delete"];
     self.deleteButton.highlightedImage = [UIImage imageNamed:@"save-delete"];
     [self.deleteButton addTarget:self action:@selector(deleteButtonsEvent:)];
@@ -63,7 +63,7 @@
     }
     
     [self.edgeLabel sizeToFitWithText:object.cell_TypeText];
-    self.edgeLabel.right           = App.Width - self.class.rightViewWidth - 3;
+    self.edgeLabel.right           = Width - self.class.rightViewWidth - 3;
     self.edgeLabel.bottom          = self.dataAdapter.cellHeight - 3;
     
     if (self.dataAdapter.cellType == BaseArticleEditCellAdapterTypeDelete) {

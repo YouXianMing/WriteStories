@@ -11,7 +11,6 @@
 #import "FoldersManager.h"
 #import "NSString+Path.h"
 #import "Math.h"
-#import "App.h"
 #import "UIImage+ImageEffects.h"
 #import "ImageCropViewController.h"
 
@@ -50,9 +49,9 @@
     // 限定尺寸
     CGSize size = [Math resetFromSize:CGSizeMake(imageObject.width, imageObject.height) withFixedHeight:150];
     
-    if (size.width >= App.Width - 20.f) {
+    if (size.width >= Width - 20.f) {
         
-        size = [Math resetFromSize:CGSizeMake(imageObject.width, imageObject.height) withFixedWidth:App.Width - 20.f];
+        size = [Math resetFromSize:CGSizeMake(imageObject.width, imageObject.height) withFixedWidth:Width - 20.f];
     }
     
     NSString *imagePath          = [NSString stringWithFormat:@"%@/block/%@", FoldersManager.WorkShop, imageObject.imageName];
@@ -91,7 +90,7 @@
         CGSize newSize = CGSizeZero;
         if (self.controller.contentView.height / self.controller.contentView.width >= imageObject.height / imageObject.width) {
             
-            newSize = [Math resetFromSize:CGSizeMake(imageObject.width, imageObject.height) withFixedWidth:App.Width - 20.f];
+            newSize = [Math resetFromSize:CGSizeMake(imageObject.width, imageObject.height) withFixedWidth:Width - 20.f];
             
         } else {
             

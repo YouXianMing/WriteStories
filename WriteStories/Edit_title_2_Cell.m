@@ -22,16 +22,16 @@
     
     [super buildSubview];
     
-    self.contentImageView                   = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 140.f)];
+    self.contentImageView                   = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, Width, 140.f)];
     self.contentImageView.contentMode       = UIViewContentModeScaleAspectFill;
     self.contentImageView.clipsToBounds     = YES;
     [self.contentView addSubview:self.contentImageView];
     
-    UIView *maskView         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 140.f)];
+    UIView *maskView         = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width, 140.f)];
     maskView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.65f];
     [self.contentView addSubview:maskView];
     
-    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, App.Width - 80.f, [Edit_title_2_Cell cellHeightWithData:nil])];
+    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, Width - 80.f, [Edit_title_2_Cell cellHeightWithData:nil])];
     self.titleLabel.font          = [UIFont PingFangSC_Semibold_WithFontSize:25.f];
     self.titleLabel.numberOfLines = 2;
     self.titleLabel.textColor     = [UIColor whiteColor];

@@ -19,7 +19,6 @@
 #import "WSAlertView.h"
 #import "StyleSaveView.h"
 #import "StyleManagerEditView.h"
-#import "App.h"
 #import "GCD.h"
 #import "UserDefaults.h"
 #import "PopMenuView.h"
@@ -99,7 +98,7 @@ typedef enum : NSUInteger {
     self.animationSet       = [Animation_Set decodeWithData:[NSData dataWithContentsOfFile:animationPath]];
     
     // 加载动画页面
-    self.animationSetView            = [[Animation_Set_View alloc] initWithFrame:CGRectMake(0, 0, App.Width, 0)];
+    self.animationSetView            = [[Animation_Set_View alloc] initWithFrame:CGRectMake(0, 0, Width, 0)];
     self.animationSetView.scrollView = self.wkWebView.scrollView;
     [self.animationSetView startObserveValue];
     [self.animationSetView firstTimeLoadAnimation_Set:self.animationSet];
@@ -374,7 +373,7 @@ typedef enum : NSUInteger {
     // 调整wkWebView的位置
     [UIView animateWithDuration:0.25 animations:^{
         
-        self.wkWebView.frame = CGRectMake(0, 0, App.Width, self.contentView.height - editView.height + 50.f);
+        self.wkWebView.frame = CGRectMake(0, 0, Width, self.contentView.height - editView.height + 50.f);
     }];
 }
 
@@ -403,7 +402,7 @@ typedef enum : NSUInteger {
     // 调整wkWebView的位置
     [UIView animateWithDuration:0.25 animations:^{
         
-        self.wkWebView.frame = CGRectMake(0, 0, App.Width, self.contentView.height);
+        self.wkWebView.frame = CGRectMake(0, 0, Width, self.contentView.height);
     }];
 }
 
@@ -442,15 +441,15 @@ typedef enum : NSUInteger {
     
     // 更多按钮
     _moreButton       = [[CircleIconButton alloc] initWithType:CircleIconButtonType_Background];
-    _moreButton.right = App.Width - 20.f;
+    _moreButton.right = Width - 20.f;
     _moreButton.top   = 20.f;
     [self.contentView addSubview:_moreButton];
     [_moreButton addTarget:self action:@selector(buttonsEvent:)];
     
-    if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+    if (DeviceInfo.isFringeScreen) {
         
-        _backButton.top = 20 + App.TopSafeHeight;
-        _moreButton.top = 20 + App.TopSafeHeight;
+        _backButton.top = 20 + DeviceInfo.fringeScreenTopSafeHeight;
+        _moreButton.top = 20 + DeviceInfo.fringeScreenTopSafeHeight;
     }
 }
 
@@ -477,9 +476,9 @@ typedef enum : NSUInteger {
         
         CGFloat y = 55.f;
         
-        if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+        if (DeviceInfo.isFringeScreen) {
             
-            y += App.TopSafeHeight;
+            y += DeviceInfo.fringeScreenTopSafeHeight;
         }
         
         NSMutableArray *datas = [NSMutableArray array];
@@ -494,7 +493,7 @@ typedef enum : NSUInteger {
         
         PopMenuView *menuView = [PopMenuView menuViewWithDelegate:self datas:datas];
         
-        [menuView showAtPoint:CGPointMake(App.Width - 25.f, y)];
+        [menuView showAtPoint:CGPointMake(Width - 25.f, y)];
     }
 }
 

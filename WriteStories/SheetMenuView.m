@@ -8,7 +8,7 @@
 
 #import "SheetMenuView.h"
 #import "SheetMenuButton.h"
-#import "App.h"
+#import "DeviceInfo.h"
 #import "UIColor+Project.h"
 #import "UIView+SetRect.h"
 #import "UIButton+Inits.h"
@@ -28,12 +28,12 @@
     
     CGFloat itemHeight = 60.f;
     
-    self.contentView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 15 + itemHeight + 15 + itemHeight * self.datas.count)];
-    self.contentView.top             = App.Height;
+    self.contentView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width, 15 + itemHeight + 15 + itemHeight * self.datas.count)];
+    self.contentView.top             = Height;
     [self addSubview:self.contentView];
     
     UIButton *cancelButton           = [UIButton buttonWithType:UIButtonTypeSystem];
-    cancelButton.frame               = CGRectMake(15.f, 0, App.Width - 30.f, itemHeight);
+    cancelButton.frame               = CGRectMake(15.f, 0, Width - 30.f, itemHeight);
     cancelButton.backgroundColor     = [UIColor whiteColor];
     cancelButton.layer.cornerRadius  = 10.f;
     cancelButton.layer.masksToBounds = YES;
@@ -43,7 +43,7 @@
     [cancelButton addTarget:self action:@selector(hide)];
     [self.contentView addSubview:cancelButton];
     
-    UIView *whiteView             = [[UIView alloc] initWithFrame:CGRectMake(15.f, 0, App.Width - 30.f, self.datas.count * itemHeight)];
+    UIView *whiteView             = [[UIView alloc] initWithFrame:CGRectMake(15.f, 0, Width - 30.f, self.datas.count * itemHeight)];
     whiteView.backgroundColor     = [UIColor whiteColor];
     whiteView.bottom              = self.contentView.height - 15 - itemHeight - 15.f;
     whiteView.layer.cornerRadius  = 10.f;
@@ -71,13 +71,13 @@
 - (void)startManualShowAnimation {
     
     CGFloat safeBottom = 0;
-    if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+    if (DeviceInfo.isFringeScreen) {
         
-        safeBottom = App.BottomSafeHeight;
+        safeBottom = DeviceInfo.fringeScreenBottomSafeHeight;
     }
     
     // 配置view动画
-    CGPoint toPoint                   = CGPointMake(self.middleX, App.Height - self.contentView.height / 2.f - safeBottom);
+    CGPoint toPoint                   = CGPointMake(self.middleX, Height - self.contentView.height / 2.f - safeBottom);
     CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animation];
     keyAnimation.keyPath              = @"position";
     keyAnimation.duration             = self.class.ShowAnimationTime;

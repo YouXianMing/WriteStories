@@ -9,7 +9,6 @@
 #import "PasswordKeyboard.h"
 #import "UIView+SetRect.h"
 #import "HexColors.h"
-#import "App.h"
 #import "TapAlphaButton.h"
 
 @implementation PasswordKeyboard
@@ -29,8 +28,8 @@
 
 - (void)buildButtons {
 
-    self.frame        = CGRectMake(0, 0, App.Width, self.itemHeight * 4.f);
-    CGFloat itemWidth = App.Width / 3.f;
+    self.frame        = CGRectMake(0, 0, Width, self.itemHeight * 4.f);
+    CGFloat itemWidth = Width / 3.f;
     
     // 按钮
     NSArray   *titles = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0"];
@@ -81,14 +80,14 @@
     // 线条
     for (int i = 0; i < 5; i++) {
         
-        UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, i * self.itemHeight, App.Width, 0.5f)];
+        UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(0, i * self.itemHeight, Width, 0.5f)];
         line.backgroundColor = self.lineColor;
         [self addSubview:line];
     }
     
     for (int i = 0; i < 2; i++) {
         
-        UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(App.Width / 3.f * (i + 1), 0, 0.5f, self.height)];
+        UIView *line         = [[UIView alloc] initWithFrame:CGRectMake(Width / 3.f * (i + 1), 0, 0.5f, self.height)];
         line.backgroundColor = self.lineColor;
         [self addSubview:line];
     }

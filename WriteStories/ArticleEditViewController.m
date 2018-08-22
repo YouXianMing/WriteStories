@@ -473,23 +473,23 @@ typedef enum : NSUInteger {
     
     // 更多按钮
     CircleIconButton *moreButton = [[CircleIconButton alloc] initWithType:CircleIconButtonType_More];
-    moreButton.right             = App.Width - 20.f;
+    moreButton.right             = Width - 20.f;
     moreButton.top               = 20.f;
     [self.contentView addSubview:moreButton];
     [moreButton addTarget:self action:@selector(buttonsEvent:)];
     
     // 预览按钮
     CircleIconButton *seeButton = [[CircleIconButton alloc] initWithType:CircleIconButtonType_See];
-    seeButton.right             = App.Width - 20.f;
-    seeButton.bottom            = App.Height - 20.f;
+    seeButton.right             = Width - 20.f;
+    seeButton.bottom            = Height - 20.f;
     [self.contentView addSubview:seeButton];
     [seeButton addTarget:self action:@selector(buttonsEvent:)];
     
-    if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+    if (DeviceInfo.isFringeScreen) {
         
-        backButton.top   = 20 + App.TopSafeHeight;
-        moreButton.top   = 20 + App.TopSafeHeight;
-        seeButton.bottom = App.Height - App.BottomSafeHeight - 20.f;
+        backButton.top   = 20 + DeviceInfo.fringeScreenTopSafeHeight;
+        moreButton.top   = 20 + DeviceInfo.fringeScreenTopSafeHeight;
+        seeButton.bottom = Height - DeviceInfo.fringeScreenBottomSafeHeight - 20.f;
     }
 }
 
@@ -511,9 +511,9 @@ typedef enum : NSUInteger {
 
         CGFloat y = 55.f;
         
-        if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+        if (DeviceInfo.isFringeScreen) {
             
-            y += App.TopSafeHeight;
+            y += DeviceInfo.fringeScreenTopSafeHeight;
         }
         
         NSMutableArray *datas = [NSMutableArray array];
@@ -524,7 +524,7 @@ typedef enum : NSUInteger {
         }
 
         PopMenuView *menuView = [PopMenuView menuViewWithDelegate:self datas:datas];
-        [menuView showAtPoint:CGPointMake(App.Width - 25.f, y)];
+        [menuView showAtPoint:CGPointMake(Width - 25.f, y)];
         
     } else if (button.tag == CircleIconButtonType_See) {
         

@@ -255,7 +255,6 @@
 		C55905A420BA6DE4002E879F /* 渐变45.png in Resources */ = {isa = PBXBuildFile; fileRef = C559059E20BA6DE3002E879F /* 渐变45.png */; };
 		C55905A520BA6DE4002E879F /* 渐变44.png in Resources */ = {isa = PBXBuildFile; fileRef = C559059F20BA6DE3002E879F /* 渐变44.png */; };
 		C55905A620BA6DE4002E879F /* 渐变42.png in Resources */ = {isa = PBXBuildFile; fileRef = C55905A020BA6DE3002E879F /* 渐变42.png */; };
-		C55B8ADE207DFA5000817ADD /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = C55B8ADD207DFA5000817ADD /* App.m */; };
 		C55BE4AC2093DCD000EDA80D /* Block_picture_normal_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C55BE4AB2093DCD000EDA80D /* Block_picture_normal_1.m */; };
 		C55BE4AF209401AB00EDA80D /* Block_picture_normal_1_cell.m in Sources */ = {isa = PBXBuildFile; fileRef = C55BE4AE209401AB00EDA80D /* Block_picture_normal_1_cell.m */; };
 		C55BE4B2209403E800EDA80D /* Edit_picture_1_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = C55BE4B1209403E800EDA80D /* Edit_picture_1_Cell.m */; };
@@ -328,6 +327,7 @@
 		C566AC132085B53E00A84961 /* ItemHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C566AC122085B53E00A84961 /* ItemHeaderView.m */; };
 		C566AC172085C12300A84961 /* BaseItemSetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C566AC162085C12300A84961 /* BaseItemSetupView.m */; };
 		C566AC1C2085C35E00A84961 /* ItemColorSetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C566AC1B2085C35E00A84961 /* ItemColorSetupView.m */; };
+		C56792E5212D707300DBB8F0 /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C56792E4212D707300DBB8F0 /* DeviceInfo.m */; };
 		C569586C20A3DDAB00AE7DDB /* Block_subtitle_colorblock_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C569586B20A3DDAB00AE7DDB /* Block_subtitle_colorblock_1.m */; };
 		C569586F20A3DDD500AE7DDB /* Block_subtitle_colorblock_1_cell.m in Sources */ = {isa = PBXBuildFile; fileRef = C569586E20A3DDD500AE7DDB /* Block_subtitle_colorblock_1_cell.m */; };
 		C569587220A4114000AE7DDB /* Block_subtitle_colorblock_2.m in Sources */ = {isa = PBXBuildFile; fileRef = C569587120A4114000AE7DDB /* Block_subtitle_colorblock_2.m */; };
@@ -941,8 +941,6 @@
 		C559059E20BA6DE3002E879F /* 渐变45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "渐变45.png"; sourceTree = "<group>"; };
 		C559059F20BA6DE3002E879F /* 渐变44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "渐变44.png"; sourceTree = "<group>"; };
 		C55905A020BA6DE3002E879F /* 渐变42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "渐变42.png"; sourceTree = "<group>"; };
-		C55B8ADC207DFA5000817ADD /* App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
-		C55B8ADD207DFA5000817ADD /* App.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		C55BE4AA2093DCD000EDA80D /* Block_picture_normal_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Block_picture_normal_1.h; sourceTree = "<group>"; };
 		C55BE4AB2093DCD000EDA80D /* Block_picture_normal_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Block_picture_normal_1.m; sourceTree = "<group>"; };
 		C55BE4AD209401AB00EDA80D /* Block_picture_normal_1_cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Block_picture_normal_1_cell.h; sourceTree = "<group>"; };
@@ -1074,6 +1072,8 @@
 		C566AC162085C12300A84961 /* BaseItemSetupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseItemSetupView.m; sourceTree = "<group>"; };
 		C566AC1A2085C35E00A84961 /* ItemColorSetupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemColorSetupView.h; sourceTree = "<group>"; };
 		C566AC1B2085C35E00A84961 /* ItemColorSetupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemColorSetupView.m; sourceTree = "<group>"; };
+		C56792E3212D707200DBB8F0 /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
+		C56792E4212D707300DBB8F0 /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfo.m; sourceTree = "<group>"; };
 		C569586A20A3DDAB00AE7DDB /* Block_subtitle_colorblock_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Block_subtitle_colorblock_1.h; sourceTree = "<group>"; };
 		C569586B20A3DDAB00AE7DDB /* Block_subtitle_colorblock_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Block_subtitle_colorblock_1.m; sourceTree = "<group>"; };
 		C569586D20A3DDD500AE7DDB /* Block_subtitle_colorblock_1_cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Block_subtitle_colorblock_1_cell.h; sourceTree = "<group>"; };
@@ -2119,6 +2119,7 @@
 		C54E676E207DF44300E483F7 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				C56792E6212D707700DBB8F0 /* DeviceInfo */,
 				C548B98120C22369007C3315 /* AppleSystemService */,
 				C54AE3E120A29AAB00D06E73 /* CommonCrypto */,
 				C5627BB1209B072B00C06D1D /* GCDWebServer 3.4.2 */,
@@ -2144,7 +2145,6 @@
 				C56FA0E120821DC600BDD7BD /* GCD */,
 				C5D9505F207F3F2600DE5759 /* Cells */,
 				C566AC0A2085B4EB00A84961 /* HeaderViews */,
-				C55B8AE0207E040200817ADD /* App */,
 				C5C2FEEA20847F3E00FB41AC /* DefaultNotificationCenter */,
 				C528C014207F24C700AA5066 /* HexColors */,
 				C5D95072207F5C8900DE5759 /* BaseWindowMenuView */,
@@ -2275,15 +2275,6 @@
 				C55819C62086D9CA00143F83 /* PickerViewRow.m */,
 			);
 			name = CustomPickerView;
-			sourceTree = "<group>";
-		};
-		C55B8AE0207E040200817ADD /* App */ = {
-			isa = PBXGroup;
-			children = (
-				C55B8ADC207DFA5000817ADD /* App.h */,
-				C55B8ADD207DFA5000817ADD /* App.m */,
-			);
-			name = App;
 			sourceTree = "<group>";
 		};
 		C55BE4A92093DC3300EDA80D /* 纯图片 */ = {
@@ -2630,6 +2621,15 @@
 				C51FB5FD208CB9F6000E09EE /* StyleManagerEditViewCell.m */,
 			);
 			name = StyleManagerEditView;
+			sourceTree = "<group>";
+		};
+		C56792E6212D707700DBB8F0 /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				C56792E3212D707200DBB8F0 /* DeviceInfo.h */,
+				C56792E4212D707300DBB8F0 /* DeviceInfo.m */,
+			);
+			name = DeviceInfo;
 			sourceTree = "<group>";
 		};
 		C569586920A3DD8600AE7DDB /* 色块 */ = {
@@ -4295,7 +4295,6 @@
 				C5D950872080555200DE5759 /* YXEasing.m in Sources */,
 				C56FA0E02081AEC700BDD7BD /* BaseFolderCreator.m in Sources */,
 				C569587820A41EFA00AE7DDB /* Block_subtitle_colorblock_3.m in Sources */,
-				C55B8ADE207DFA5000817ADD /* App.m in Sources */,
 				C5DA5EB620973080006A1FED /* BaseUserDefaults.m in Sources */,
 				C55D3FF220C37F5300704217 /* Mark_gradient_cell.m in Sources */,
 				C5D95053207F380C00DE5759 /* RootMenuViewController.m in Sources */,
@@ -4442,6 +4441,7 @@
 				C5DA90D1208DFCC0002BD7A4 /* IconFontsManager.m in Sources */,
 				C5D95071207F5C8200DE5759 /* BaseWindowMenuView.m in Sources */,
 				C59A7F052089A6E500BACAB6 /* WSAlertViewButton.m in Sources */,
+				C56792E5212D707300DBB8F0 /* DeviceInfo.m in Sources */,
 				C5627BDD209B074700C06D1D /* GCDWebServer.m in Sources */,
 				C5627BE5209B074700C06D1D /* GCDWebServerDataRequest.m in Sources */,
 				C590A9F9208721DB005EE5CA /* CAGradientView+CAGradientViewObject.m in Sources */,

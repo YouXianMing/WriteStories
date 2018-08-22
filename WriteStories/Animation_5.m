@@ -18,7 +18,7 @@
 - (void)buildSubViews {
     
     {
-        CAEmitterView *emitterView  = [[CAEmitterView alloc] initWithFrame:CGRectMake(-40, 0, App.Width + 80.f, 350.f)];
+        CAEmitterView *emitterView  = [[CAEmitterView alloc] initWithFrame:CGRectMake(-40, 0, Width + 80.f, 350.f)];
         emitterView.seed            = 4;
         emitterView.emitterShape    = kCAEmitterLayerRectangle;
         emitterView.emitterMode     = kCAEmitterLayerSurface;

@@ -10,7 +10,6 @@
 #import "GCDWebUploader.h"
 #import "FoldersManager.h"
 #import "FolderWebUploader.h"
-#import "App.h"
 #import "UIFont+Project.h"
 #import "EdgeInsetsLabel.h"
 #import "WSAlertView.h"
@@ -80,13 +79,13 @@
     
     // wifi图片
     UIImageView *wifiSuccessView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wifiSuccess"]];
-    wifiSuccessView.centerX      = App.HalfWidth;
+    wifiSuccessView.centerX      = Width / 2.f;
     wifiSuccessView.bottom       = self.contentView.height / 2.f - 50.f;
     [self.contentView addSubview:wifiSuccessView];
     
     // wifi图片-彩色点
     UIImageView *wifiSuccessColorView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wifiSuccessColor"]];
-    wifiSuccessColorView.centerX      = App.HalfWidth;
+    wifiSuccessColorView.centerX      = Width / 2.f;
     wifiSuccessColorView.bottom       = self.contentView.height / 2.f - 50.f;
     [self.contentView addSubview:wifiSuccessColorView];
     
@@ -121,7 +120,7 @@
     [centerLabel sizeToFit];
     
     centerLabel.top     = self.contentView.height / 2.f;
-    centerLabel.centerX = App.HalfWidth;
+    centerLabel.centerX = Width / 2.f;
     [self.contentView addSubview:centerLabel];
     
     // ip地址
@@ -134,17 +133,17 @@
     urlLabel.clipsToBounds      = YES;
     [urlLabel sizeToFitWithText:self.webServer.serverURL.absoluteString];
     
-    urlLabel.centerX = App.HalfWidth;
+    urlLabel.centerX = Width / 2.f;
     urlLabel.top     = centerLabel.bottom + 15.f;
     [self.contentView addSubview:urlLabel];
     
-    if (App.WifiName.length) {
+    if (DeviceInfo.wifiName.length) {
         
         // wifi提示
         UILabel *wifiLabel = [[UILabel alloc] init];
         [self.contentView addSubview:wifiLabel];
         
-        NSString *wifiString  = App.WifiName;
+        NSString *wifiString  = DeviceInfo.wifiName;
         NSString *totalString = [NSString stringWithFormat:@"%@ %@", [NSString unicodeWithHexString:@"0xF1EB"], wifiString];
         
         NSMutableAttributedString *richWifi = [[NSMutableAttributedString alloc] initWithString:totalString];
@@ -169,12 +168,12 @@
         
         wifiLabel.attributedText = richWifi;
         [wifiLabel sizeToFit];
-        wifiLabel.centerX = App.HalfWidth;
+        wifiLabel.centerX = Width / 2.f;
         wifiLabel.bottom  = self.contentView.height - 15.f;
         
-        if (App.Device == Device_375x812 || App.Device == Device_Unknown) {
+        if (DeviceInfo.isFringeScreen) {
             
-            wifiLabel.bottom = self.contentView.height - 15.f - App.BottomSafeHeight;
+            wifiLabel.bottom = self.contentView.height - 15.f - DeviceInfo.fringeScreenBottomSafeHeight;
         }
         
         // 注意：请确认电脑与手机同处于
@@ -183,7 +182,7 @@
         noticeLabel.textColor = [UIColor colorWithHexString:@"#5a5a5a"];
         noticeLabel.text      = @"注意：请确认电脑与手机同处于";
         [noticeLabel sizeToFit];
-        noticeLabel.centerX = App.HalfWidth;
+        noticeLabel.centerX = Width / 2.f;
         noticeLabel.bottom  = wifiLabel.top - 7.f;
         [self.contentView addSubview:noticeLabel];
     }
@@ -239,7 +238,7 @@
     [centerLabel sizeToFit];
     
     centerLabel.top     = self.contentView.height / 2.f + 30.f;
-    centerLabel.centerX = App.HalfWidth;
+    centerLabel.centerX = Width / 2.f;
     [self.contentView addSubview:centerLabel];
 }
 

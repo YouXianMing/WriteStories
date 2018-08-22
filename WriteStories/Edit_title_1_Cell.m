@@ -20,7 +20,7 @@
     
     [super buildSubview];
     
-    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, App.Width - 80.f, [Edit_title_1_Cell cellHeightWithData:nil])];
+    self.titleLabel               = [[UILabel alloc] initWithFrame:CGRectMake(40, 0, Width - 80.f, [Edit_title_1_Cell cellHeightWithData:nil])];
     self.titleLabel.font          = [UIFont PingFangSC_Semibold_WithFontSize:25.f];
     self.titleLabel.numberOfLines = 2;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;

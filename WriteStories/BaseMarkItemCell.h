@@ -13,7 +13,6 @@
 #import "FoldersManager.h"
 #import "NSString+Path.h"
 #import "HexColors.h"
-#import "App.h"
 
 @interface BaseMarkItemCell : BaseCustomCollectionCell
 

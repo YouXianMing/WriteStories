@@ -7,13 +7,13 @@
 //
 
 #import "VersionManager.h"
-#import "App.h"
+#import "DeviceInfo.h"
 
 @implementation VersionManager
 
 + (void)storeVersionDataWithFolder:(NSString *)folder {
     
-    [[App.Version dataUsingEncoding:NSUTF8StringEncoding] writeToFile:[folder stringByAppendingPathComponent:@"version"]
+    [[DeviceInfo.appVersion dataUsingEncoding:NSUTF8StringEncoding] writeToFile:[folder stringByAppendingPathComponent:@"version"]
                                                            atomically:YES];
 }
 
@@ -22,7 +22,7 @@
     NSData   *data    = [NSData dataWithContentsOfFile:[folder stringByAppendingPathComponent:@"version"]];
     NSString *version = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
-    if (version.floatValue <= App.Version.floatValue) {
+    if (version.floatValue <= DeviceInfo.appVersion.floatValue) {
         
         return YES;
         

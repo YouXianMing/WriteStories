@@ -33,7 +33,7 @@
     id <ArticleEditObjectProtocol> object = self.data;
     
     self.mainContentLabel.text  = object.cell_text;
-    self.mainContentLabel.width = App.Width - [BaseArticleEditCell rightViewWidth] - 20.f;
+    self.mainContentLabel.width = Width - [BaseArticleEditCell rightViewWidth] - 20.f;
     [self.mainContentLabel sizeToFit];
     self.mainContentLabel.left = 10.f;
     self.mainContentLabel.top  = 10.f;
@@ -43,7 +43,7 @@
     
     id <ArticleEditObjectProtocol> object = data;
     
-    CGFloat width         = App.Width - [BaseArticleEditCell rightViewWidth] - 20.f;
+    CGFloat width         = Width - [BaseArticleEditCell rightViewWidth] - 20.f;
     CGFloat oneLineHeight = [@"我们" heightWithStringFont:[UIFont PingFangSC_Semibold_WithFontSize:19.f]           fixedWidth:width];
     CGFloat totalHeight   = [object.cell_text heightWithStringFont:[UIFont PingFangSC_Semibold_WithFontSize:19.f] fixedWidth:width];
     

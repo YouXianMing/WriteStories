@@ -12,7 +12,6 @@
 #import "UIColor+Project.h"
 #import "UIFont+Project.h"
 #import "ScaleSelectedViewTableViewCell.h"
-#import "App.h"
 #import "GCD.h"
 
 @interface ScaleSelectedView () <UITableViewDelegate, UITableViewDataSource>
@@ -47,7 +46,7 @@
     [self.keyWindow addSubview:self];
     
     
-    self.contentView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, App.Width - 120.f, 40 + 50 * 5)];
+    self.contentView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Width - 120.f, 40 + 50 * 5)];
     self.contentView.backgroundColor = [UIColor whiteColor];
     self.contentView.center          = self.middlePoint;
     self.contentView.alpha           = 0.f;
@@ -60,7 +59,7 @@
     [closeButton addTarget:self action:@selector(hide)];
     [self.contentView addSubview:closeButton];
     
-    UILabel *titleLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, App.Width - 120.f, 40.f)];
+    UILabel *titleLabel      = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Width - 120.f, 40.f)];
     titleLabel.font          = [UIFont PingFangSC_Regular_WithFontSize:16.f];
     titleLabel.text          = @"图片宽高比";
     titleLabel.textAlignment = NSTextAlignmentCenter;

@@ -18,7 +18,7 @@
 
 - (void)buildSubViews {
     
-    self.emitterView                 = [[CAEmitterView alloc] initWithFrame:CGRectMake(0, 0, App.Width, 450.f)];
+    self.emitterView                 = [[CAEmitterView alloc] initWithFrame:CGRectMake(0, 0, Width, 450.f)];
     self.emitterView.seed            = arc4random();
     self.emitterView.emitterShape    = kCAEmitterLayerLine;
     self.emitterView.emitterMode     = kCAEmitterLayerVolume;

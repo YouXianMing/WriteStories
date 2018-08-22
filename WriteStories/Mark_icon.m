@@ -7,7 +7,6 @@
 //
 
 #import "Mark_icon.h"
-#import "App.h"
 
 @implementation Mark_icon
 
@@ -345,7 +344,7 @@
     item.gradientObject      = gradientObject;
     item.gradientObjectAlpha = @(1.f);
     
-    if (App.Width == 320.f) {
+    if (Width == 320.f) {
         
         item.iconFontSize = @(45.f);
     }

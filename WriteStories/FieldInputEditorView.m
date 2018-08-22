@@ -19,10 +19,10 @@
 
 - (void)buildSubViews {
     
-    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, self.class.titleHeight, App.Width, 50.f)];
+    self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, self.class.titleHeight, Width, 50.f)];
     [self addSubview:self.contentView];
     
-    self.field          = [[UITextField alloc] initWithFrame:CGRectMake(10.f, 5, App.Width - 20.f, 40.f)];
+    self.field          = [[UITextField alloc] initWithFrame:CGRectMake(10.f, 5, Width - 20.f, 40.f)];
     self.field.font     = [UIFont PingFangSC_Medium_WithFontSize:19.f];
     self.field.delegate = self;
     [self.contentView addSubview:self.field];
