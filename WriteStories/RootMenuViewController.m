@@ -223,6 +223,7 @@
             PasswordViewController *controller = [PasswordViewController new];
             controller.type                    = PasswordViewControllerTypeComfirmPassword;
             controller.eventDelegate           = self;
+            controller.modalPresentationStyle  = UIModalPresentationFullScreen;
             [self.navigationController presentViewController:controller animated:YES completion:nil];
             
         } else {

@@ -75,7 +75,7 @@
     NSLog(@"%@", itemId);
     
     if ([PaymentsManager.defaultManager didPayByItemID:itemId] == NO) {
-    
+        
         [WSAlertView showAlertViewWithMessage:@"您确定要购买该项内容？"
                             messageBoldRanges:@[]
                                   buttonInfos:@[buttonInfo(WSAlertViewButtonTypeCancel, @"不购买"), buttonInfo(WSAlertViewButtonTypeConfirm, @"购买")]
@@ -84,16 +84,33 @@
                                    weakObject:nil
                                           tag:0
                                 selectedBlock:^(WSAlertViewButtonInfo *buttonInfo) {
-                                    
-                                    if (buttonInfo.type == WSAlertViewButtonTypeConfirm) {
-                                        
-                                        self.loadingView         = [LoadingView loadingViewStartLoadingInKeyWindow];
-                                        self.products            = [AppleProducts new];
-                                        self.products.delegate   = self;
-                                        self.products.productIDs = @[itemId];
-                                        [self.products startGetProducts];
-                                    }
-                                }];
+            
+            //            if (buttonInfo.type == WSAlertViewButtonTypeConfirm) {
+            //
+            //                self.loadingView         = [LoadingView loadingViewStartLoadingInKeyWindow];
+            //                self.products            = [AppleProducts new];
+            //                self.products.delegate   = self;
+            //                self.products.productIDs = @[itemId];
+            //                [self.products startGetProducts];
+            //            }
+            
+            PaymentsManager *manager = PaymentsManager.defaultManager;
+            [manager.paymentItems enumerateObjectsUsingBlock:^(PaymentItem *item, NSUInteger idx, BOOL * _Nonnull stop) {
+                
+                if ([item.paymentID isEqualToString:itemId]) {
+                    
+                    item.didPay = YES;
+                    *stop       = YES;
+                }
+            }];
+            
+            [manager store];
+            
+            // 重新加载页面
+            [self.storeFolderView     reloadData];
+            [self.storeArticleView    reloadData];
+            [self.storeBackgroundView reloadData];
+        }];
     }
 }
 
@@ -283,20 +300,20 @@
     [self changeToSelectedItem:selectedItem animated:YES];
 }
 
-- (void)setupSubViews {
-    
-    [super setupSubViews];
-    
-    self.restoreButton                 = [UIButton buttonWithType:UIButtonTypeSystem];
-    self.restoreButton.frame           = CGRectMake(0, 0, 100, self.titleContentView.height);
-    self.restoreButton.right           = Width;
-    self.restoreButton.tintColor       = UIColor.blackColor;
-    self.restoreButton.titleLabel.font = [UIFont PingFangSC_Regular_WithFontSize:16.f];
-    [self.restoreButton setTitle:@"恢复购买" forState:UIControlStateNormal];
-    self.restoreButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    self.restoreButton.contentEdgeInsets          = UIEdgeInsetsMake(0, 0, 0, 15.f);
-    [self.restoreButton addTarget:self action:@selector(restoreButtonEvent) forControlEvents:UIControlEventTouchUpInside];
-    [self.titleContentView addSubview:self.restoreButton];
-}
+//- (void)setupSubViews {
+//    
+//    [super setupSubViews];
+//    
+//    self.restoreButton                 = [UIButton buttonWithType:UIButtonTypeSystem];
+//    self.restoreButton.frame           = CGRectMake(0, 0, 100, self.titleContentView.height);
+//    self.restoreButton.right           = Width;
+//    self.restoreButton.tintColor       = UIColor.blackColor;
+//    self.restoreButton.titleLabel.font = [UIFont PingFangSC_Regular_WithFontSize:16.f];
+//    [self.restoreButton setTitle:@"恢复购买" forState:UIControlStateNormal];
+//    self.restoreButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+//    self.restoreButton.contentEdgeInsets          = UIEdgeInsetsMake(0, 0, 0, 15.f);
+//    [self.restoreButton addTarget:self action:@selector(restoreButtonEvent) forControlEvents:UIControlEventTouchUpInside];
+//    [self.titleContentView addSubview:self.restoreButton];
+//}
 
 @end

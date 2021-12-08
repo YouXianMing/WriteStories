@@ -272,6 +272,7 @@ typedef enum : NSUInteger {
                                                                                                         setNavigationBarHidden:YES];
             navController.eventDelegate                   = self;
             navController.view.tag                        = NavigationControllerNormal;
+            navController.modalPresentationStyle          = UIModalPresentationFullScreen;
             [self presentViewController:navController animated:YES completion:nil];
             
         } else if ([data.menuViewTitleName isEqualToString:@"添加小标题..."]) {
@@ -284,6 +285,7 @@ typedef enum : NSUInteger {
                                                                                                         setNavigationBarHidden:YES];
             navController.eventDelegate                   = self;
             navController.view.tag                        = NavigationControllerNormal;
+            navController.modalPresentationStyle          = UIModalPresentationFullScreen;
             [self presentViewController:navController animated:YES completion:nil];
             
         } else if ([data.menuViewTitleName isEqualToString:@"添加图文..."]) {
@@ -297,6 +299,7 @@ typedef enum : NSUInteger {
                                                                                                         setNavigationBarHidden:YES];
             navController.eventDelegate                   = self;
             navController.view.tag                        = NavigationControllerNormal;
+            navController.modalPresentationStyle          = UIModalPresentationFullScreen;
             [self presentViewController:navController animated:YES completion:nil];
             
         } else if ([data.menuViewTitleName isEqualToString:@"添加分割线..."]) {
@@ -317,6 +320,7 @@ typedef enum : NSUInteger {
                                                                                                         setNavigationBarHidden:YES];
             navController.eventDelegate                   = self;
             navController.view.tag                        = NavigationControllerTitle;
+            navController.modalPresentationStyle          = UIModalPresentationFullScreen;
             [self presentViewController:navController animated:YES completion:nil];
             
         } else if ([data.menuViewTitleName isEqualToString:@"内容排序"]) {
@@ -545,7 +549,7 @@ typedef enum : NSUInteger {
         controller.htmlFolder              = self.htmlFolder;
         controller.blockItems              = blockItems;
         BaseCustomNavigationController *nc = [[BaseCustomNavigationController alloc] initWithRootViewController:controller setNavigationBarHidden:YES];
-        
+        nc.modalPresentationStyle          = UIModalPresentationFullScreen;
         [self.navigationController presentViewController:nc animated:YES completion:nil];
     }
 }

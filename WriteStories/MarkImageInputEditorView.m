@@ -74,6 +74,7 @@
     UIImagePickerController *pickController = [[UIImagePickerController alloc] init];
     pickController.sourceType               = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     pickController.delegate                 = self;
+    pickController.modalPresentationStyle   = UIModalPresentationFullScreen;
     [self.controller presentViewController:pickController animated:YES completion:nil];
 }
 
@@ -102,6 +103,7 @@
         controller.image                    = image;
         controller.transparentSize          = newSize;
         controller.eventDelegate            = self;
+        controller.modalPresentationStyle   = UIModalPresentationFullScreen;
         [self.controller presentViewController:controller animated:YES completion:nil];
     }];
 }

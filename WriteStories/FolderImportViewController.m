@@ -158,6 +158,7 @@ typedef enum : NSUInteger {
         FolderWifiViewController *controller = [FolderWifiViewController new];
         controller.title                     = @"WIFI文件管理";
         controller.eventDelegate             = self;
+        controller.modalPresentationStyle    = UIModalPresentationFullScreen;
         [self.navigationController presentViewController:controller animated:YES completion:nil];
         
     } else if (button.tag == kButton_Import) {

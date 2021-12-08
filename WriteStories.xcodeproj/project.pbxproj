@@ -206,7 +206,6 @@
 		C557854920BBFE9900D54051 /* Animation_3.m in Sources */ = {isa = PBXBuildFile; fileRef = C557854820BBFE9900D54051 /* Animation_3.m */; };
 		C557854C20BC06CC00D54051 /* Animation_4.m in Sources */ = {isa = PBXBuildFile; fileRef = C557854B20BC06CC00D54051 /* Animation_4.m */; };
 		C557854F20BC20AF00D54051 /* Animation_5.m in Sources */ = {isa = PBXBuildFile; fileRef = C557854E20BC20AF00D54051 /* Animation_5.m */; };
-		C557855120BE32BE00D54051 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C557855020BE32BE00D54051 /* StoreKit.framework */; };
 		C55819BB2086D99300143F83 /* FontPickerRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55819B32086D99100143F83 /* FontPickerRowView.m */; };
 		C55819BC2086D99300143F83 /* FontsPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55819B42086D99100143F83 /* FontsPickerView.m */; };
 		C55819BD2086D99300143F83 /* NumberPickerRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55819B52086D99100143F83 /* NumberPickerRowView.m */; };
@@ -880,7 +879,6 @@
 		C557854B20BC06CC00D54051 /* Animation_4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animation_4.m; sourceTree = "<group>"; };
 		C557854D20BC20AF00D54051 /* Animation_5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animation_5.h; sourceTree = "<group>"; };
 		C557854E20BC20AF00D54051 /* Animation_5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animation_5.m; sourceTree = "<group>"; };
-		C557855020BE32BE00D54051 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C55819B32086D99100143F83 /* FontPickerRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontPickerRowView.m; sourceTree = "<group>"; };
 		C55819B42086D99100143F83 /* FontsPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontsPickerView.m; sourceTree = "<group>"; };
 		C55819B52086D99100143F83 /* NumberPickerRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberPickerRowView.m; sourceTree = "<group>"; };
@@ -1558,7 +1556,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C557855120BE32BE00D54051 /* StoreKit.framework in Frameworks */,
 				C5627BED209B08BC00C06D1D /* libxml2.tbd in Frameworks */,
 				C5627BEB209B07AF00C06D1D /* libz.tbd in Frameworks */,
 			);
@@ -2546,7 +2543,6 @@
 		C5627BE9209B07AE00C06D1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C557855020BE32BE00D54051 /* StoreKit.framework */,
 				C5627BEC209B08BB00C06D1D /* libxml2.tbd */,
 				C5627BEA209B07AE00C06D1D /* libz.tbd */,
 			);

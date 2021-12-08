@@ -477,6 +477,7 @@ typedef enum : NSUInteger {
         [mailController setToRecipients:@[@"YouXianMing1987@iCloud.com"]];
         [mailController setSubject:[NSString stringWithFormat:@"[%@] 找回密码", time]];
         [mailController setMessageBody:body isHTML:YES];
+        mailController.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:mailController animated:YES completion:nil];
 
     } else {

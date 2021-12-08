@@ -300,6 +300,7 @@
                 PasswordViewController *controller = [PasswordViewController new];
                 controller.type                    = PasswordViewControllerTypeSetNewPassword;
                 controller.eventDelegate           = self;
+                controller.modalPresentationStyle  = UIModalPresentationFullScreen;
                 [self.navigationController presentViewController:controller animated:YES completion:nil];
                 
             } else {
@@ -307,6 +308,7 @@
                 PasswordViewController *controller = [PasswordViewController new];
                 controller.type                    = PasswordViewControllerTypeDeletePassword;
                 controller.eventDelegate           = self;
+                controller.modalPresentationStyle  = UIModalPresentationFullScreen;
                 [self.navigationController presentViewController:controller animated:YES completion:nil];
             }
         }
@@ -370,6 +372,7 @@
         [mailController setToRecipients:@[@"YouXianMing1987@iCloud.com"]];
         [mailController setSubject:[NSString stringWithFormat:@"反馈"]];
         [mailController setMessageBody:body isHTML:YES];
+        mailController.modalPresentationStyle  = UIModalPresentationFullScreen;
         [self presentViewController:mailController animated:YES completion:nil];
 
     } else {
